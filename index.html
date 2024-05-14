@@ -11,28 +11,58 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
-    Score Rules You Picked The House Picked You Win You Lose Play Again
-
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <link href="./style.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="attribution">
+    <header class="score-board">
+      <img src="./images/logo.svg" alt="paper" />
+      <div class="score-box">
+        <p class="score-text">Score</p>
+        <div class="score">12</div>
+      </div>
+    </header>
+    <main class="game">
+      <div class="user-select-move">
+        <img
+          src="./images/bg-triangle.svg"
+          alt="background triangle"
+          class="bg-triangle"
+        />
+        <div class="move-container rock">
+          <img src="./images/icon-rock.svg" alt="rock" class="move-icon" />
+        </div>
+        <div class="move-container scissor">
+          <img
+            src="./images/icon-scissors.svg"
+            alt="scissor"
+            class="move-icon"
+          />
+        </div>
+
+        <div class="move-container paper">
+          <img src="./images/icon-paper.svg" alt="paper" class="move-icon" />
+        </div>
+      </div>
+    </main>
+    <footer>
+      <button class="btn show-rules">Rules</button>
+    </footer>
+
+    <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">daniel-neyla</a>.
-    </div>
+    </div> -->
   </body>
 </html>
