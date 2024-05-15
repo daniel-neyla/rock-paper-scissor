@@ -3,66 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
+    <title>Rock, Paper, Scissors</title>
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-
-    <title>Frontend Mentor | Rock, Paper, Scissors</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <link href="./style.css" rel="stylesheet" />
   </head>
   <body>
     <header class="score-board">
-      <img src="./images/logo.svg" alt="paper" />
+      <img src="./images/logo.svg" alt="Paper" class="logo" />
       <div class="score-box">
         <p class="score-text">Score</p>
         <div class="score">12</div>
       </div>
     </header>
     <main class="game">
-      <div class="user-select-move">
+      <div class="rules hidden">
+        <div class="rules-heading">
+          <h2>Rules</h2>
+          <img
+            src="/images/icon-close.svg"
+            alt="Close rules"
+            class="close-icon"
+            onclick="hideRules()"
+          />
+        </div>
+        <img src="images/image-rules.svg" alt="Rules" />
+      </div>
+      <div class="overlay hidden" onclick="hideRules()"></div>
+      <div class="step-1 hidden">
         <img
           src="./images/bg-triangle.svg"
-          alt="background triangle"
+          alt="Background triangle"
           class="bg-triangle"
         />
-        <div class="move-container rock">
-          <img src="./images/icon-rock.svg" alt="rock" class="move-icon" />
+        <div class="move-container rock" onclick="chooseMove('rock')">
+          <img src="./images/icon-rock.svg" alt="Rock" class="move-icon" />
         </div>
-        <div class="move-container scissor">
+        <div class="move-container scissor" onclick="chooseMove('scissors')">
           <img
             src="./images/icon-scissors.svg"
-            alt="scissor"
+            alt="Scissor"
             class="move-icon"
           />
         </div>
-
-        <div class="move-container paper">
-          <img src="./images/icon-paper.svg" alt="paper" class="move-icon" />
+        <div class="move-container paper" onclick="chooseMove('paper')">
+          <img src="./images/icon-paper.svg" alt="Paper" class="move-icon" />
+        </div>
+      </div>
+      <div class="step-2">
+        <div class="user-move">
+          <h3>You picked</h3>
+          <div>
+            <div class="move-container rock">
+              <img src="./images/icon-rock.svg" alt="Rock" class="move-icon" />
+            </div>
+            <div class="move-container scissor hidden">
+              <img
+                src="./images/icon-scissors.svg"
+                alt="Scissor"
+                class="move-icon"
+              />
+            </div>
+            <div class="move-container paper hidden">
+              <img
+                src="./images/icon-paper.svg"
+                alt="Paper"
+                class="move-icon"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="computer-move">
+          <h3>The house picked</h3>
+          <div class="no-move"></div>
         </div>
       </div>
     </main>
     <footer>
-      <button class="btn show-rules">Rules</button>
+      <button class="btn show-rules" onclick="showRules()">Rules</button>
     </footer>
 
     <!-- <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">daniel-neyla</a>.
-    </div> -->
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">daniel-neyla</a>.
+  </div> -->
+
+    <script src="./script.js"></script>
   </body>
 </html>
